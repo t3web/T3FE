@@ -19,7 +19,7 @@ module.exports = {
       { text: "T3管理后台", link: "/t3-admin/" }
     ],
     sidebar: {
-      '/t3-admin/': genSidebarConfigCondots('T3后台管理系统说明文档')
+      '/t3-admin/': genSidebarConfigCondots('T3后台管理系统')
     }
   },
 
@@ -38,7 +38,14 @@ function genSidebarConfigCondots (title) {
       collapsable: false,
       children: [
         '',
-        't3-admin',
+        'start',
+        'globalconfig',
+        'routerconfig',
+        'authconfig',
+        'globaldirect',
+        'compnent',
+        'apirequest',
+        'mock'
       ]
     }
   ]
