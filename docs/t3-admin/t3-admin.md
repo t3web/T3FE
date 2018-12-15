@@ -1,6 +1,6 @@
 # Customize
 
-We'll take this repo as an example to show you how to make this site as you like.
+We'll take this repo as an example to show you how to make this site as you like.yes
 
 Don't forget to refer to official [VuePress Guide](https://vuepress.vuejs.org/guide/) to find out more.
 
