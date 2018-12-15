@@ -4,9 +4,7 @@ Make sure you have [Node.js](https://nodejs.org) and [yarn](https://yarnpkg.com)
 
 ```bash
 # Clone the repo
-$ git clone https://github.com/xsphalo/myBlogDev.git
-$ cd myBlogDev
-
+$ git clone https://github.com/zcfxproject/T3FE.git
 # Install dependencies
 $ yarn  # or npm install
 
