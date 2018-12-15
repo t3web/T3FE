@@ -1,0 +1,44 @@
+{
+  "name": "vuepress-homepage",
+  "version": "0.0.1",
+  "description": "Generate your homepage with VuePress",
+  "author": "Fing <mtobeiyf@163.com>",
+  "start_url": "index.html",
+  "short_name": "若谷",
+  "theme_color": "white",
+  "display": "standalone",
+  "main": "index.js",
+  "repository": "https://github.com/xsphalo/xsphalo.github.io.git",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "deploy.sh"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "icons": [
+    {
+      "src": "https://avatars0.githubusercontent.com/u/30809948?s=460&v=4",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "devDependencies": {
+    "vuepress": "^0.14.5"
+  },
+  "dependencies": {
+    "markdown-it": "^8.4.1",
+    "markdown-it-emoji": "^1.4.0",
+    "markdown-it-katex": "^2.0.3"
+  },
+  "related_applications": [
+    {
+      "platform": "web"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=cheeaun.hackerweb"
+    }
+  ]
+}
