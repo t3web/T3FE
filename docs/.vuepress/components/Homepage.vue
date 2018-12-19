@@ -25,14 +25,6 @@
             {{data.interests}}
           </span>
         </div>
-        <div class="socials">
-          <div v-for="item in data.socials">
-            <a :href="item.link" target="_blank">
-              <img :src="'/icons/'+item.title+'.svg'" :alt="item.title"
-              :title="item.title" />
-            </a>
-          </div>
-        </div>
       </div>
       <div class="footer" v-if="data.footer">
         {{ data.footer }}
@@ -117,17 +109,6 @@ body
     .interests
       padding 1em 1.5em
       border-top 1px solid rgba(34,36,38,.1)
-    .socials
-      border-top 1px solid rgba(34,36,38,.1)
-      display flex
-      flex-direction: row
-      // align-items: center
-      justify-content: center
-      flex-wrap wrap 
-      img 
-        width 32px
-        margin 1em
-        cursor pointer
     .actions
       border-top 1px solid rgba(34,36,38,.1)
       display flex
