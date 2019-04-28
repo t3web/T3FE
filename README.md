@@ -2,7 +2,7 @@ Check the full documentation here :point_right: [Guide](https://vuepress.docschi
 
 Make sure you have [Node.js](https://nodejs.org) and [yarn](https://yarnpkg.com) installed.
 ```bash
-  #项目查看地址  https://zcfxproject.github.io/
+  #项目查看地址   http://47.111.63.211/t3webdoc/
 ```
 ```bash
 # Clone the repo
