@@ -139,6 +139,82 @@ export default {
 |selectAll |是否带有全部选择 |Boolean | false|
 |value|input值，双向绑定selectedUuid| String | |
 
+#### 2.1 数据导出
+#### 概述 ##
+用来导出列表中的数据，支持勾选导出，全部数据导出，自定义导出文件的标题，文件类型等等
+#### 代码实例 ##
+
+``` 
+<template>
+    <ExportFile 
+        //请求带上的参数
+        :queryData="exportParams"
+        //导出的请求地址
+        :exportUrl="exportUrl"
+        //导出的Excel文件中显示的标题
+         excelTitle="车辆信息导出">
+    </ExportFile>
+</template>
+import ExportFile from "_a/export-file/exportFile.vue";
+<script>
+export default {
+    components:{
+      ExportFile
+}
+</script>
+```
+### API
+#### props
 
 
+属性 |说明 | 类型 | 默认值
+---|---|---|---|
+ queryData| 请求的参数 | Object | {}
+ ajaxMethod| 请求方法 | String | POST
+ columnsTitle | 每一列标题| Array |[]
+exportUrl | 导出的api | String(必填) | -
+excelTitle | 导出文件的标题 | String | Message
+exportModalTitle | 模态框的title | String | 信息导出
+exportType | 导出文件的类型 | String | xls
 
+#### 2.1 文件导入
+#### 概述 ##
+支持导入文件、图片等
+#### 代码实例 
+
+``` 
+<template>
+<ImportFile
+  toDownTemplateUrl="/api/assets/v1/vehicle/createVehicleExcelModel"
+  importOnceFileUrl="/api/assets/v1/vehicle/addBatchExcelVehicle"
+  downFailUrl="/api/assets/v1/vehicle/downloadErrorList"
+  @on-success="upSuccess"
+></ImportFile>
+</template>
+import ImportFile from "_a/import-file/index.vue";
+<script>
+export default {
+    components:{
+      ImportFile
+}
+</script>
+```
+### API
+#### props
+
+
+属性 |说明 | 类型 | 默认值
+---|---|---|---|
+ downFailUrl| 下载失败的api | String | -
+ importOnceFileUrl | 导入Excel的URL | String | -
+ importTwiceFileUrl | 导入图片压缩包的URL | String | -
+importOnceData | 导入Excel时的请求参数 |Object | -
+importTwiceData | 导入图片时的请求参数 | String | -
+toDownTemplateUrl | 下载模板的链接 | String | 信息导出
+exportType | 导出文件的类型 | String | xls
+btnText | 按钮显示的文字 | String | 批量新建
+isNeedUpImg | 是否需要上传图片 | Boolean | false 
+isShowExcel | 是否需要上传Excel | Boolean | false
+isShowTemplate | 是否需要显示下载模板 | Boolean | false
+importName | 上传的Excel文件字段名 | String | file
+importZipName | 上传的图片压缩包文件字段名 | String | file
