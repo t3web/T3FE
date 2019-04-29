@@ -4,16 +4,16 @@
   "description": "Generate your homepage with VuePress",
   "author": "Fing <mtobeiyf@163.com>",
   "start_url": "index.html",
-  "short_name": "众车纷享",
+  "short_name": "T3web",
   "theme_color": "white",
   "display": "standalone",
   "main": "index.js",
-  "repository": "https://github.com/xsphalo/xsphalo.github.io.git",
+  "repository": "",
   "scripts": {
     "clean": "rimraf dist/*",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "deploy": "deploy.sh"
+    "deploy": "./deploy.sh"
   },
   "license": "MIT",
   "keywords": [],
