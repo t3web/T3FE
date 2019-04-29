@@ -328,7 +328,7 @@ export default {
 width | 组件的最大宽度 | number | 300
 height | 组件的最大高度 | number | 80
 params | 请求接口带上的参数 | Object | {}
-isLock | 请求锁，设为true以后可以在父组件控制达到某个条件以后再触发 | Boolean | false
+isLock | 请求锁，设为true以后可以在父组件控制达到某个条件以后再触发请求 | Boolean | false
 dataKey | 下拉列表的value | String | key
 dataLabel | 下拉列表的label | String | label
 
