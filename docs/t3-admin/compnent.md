@@ -331,3 +331,9 @@ params | 请求接口带上的参数 | Object | {}
 isLock | 请求锁，设为true以后可以在父组件控制达到某个条件以后再触发 | Boolean | false
 dataKey | 下拉列表的value | String | key
 dataLabel | 下拉列表的label | String | label
+
+#### events
+事件名 |说明 | 返回值
+---|---|---
+ on-success| 接口返回的结果 | Array | []
+ clearValue | 清楚接口返回的结果 | Array | []
