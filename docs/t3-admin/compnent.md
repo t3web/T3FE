@@ -248,7 +248,7 @@ importZipName | 上传的图片压缩包文件字段名 | String | file
 ```
 
 
-#### 3.1 API
+#### 3.2 API
 SearchList props
 属性 |说明 | 类型 | 默认值
 ---|---|---|---|
@@ -262,6 +262,8 @@ SearchList events
 ---|---|---|
 on-search | 点击搜索按钮时触发 | { key: value }
 on-reset | 点击重置按钮时触发 | {}
+on-search-tree | 当name为drop-tree-input时，输入搜索框时触发 | value: 输入框内容
+on-drop-tree | 当name为drop-tree-input时，展开模糊搜索时触发 | -
 <br/>
 
 SearchList methods
@@ -290,3 +292,86 @@ value2 | 仅在name值为section-input时有效，用于第二个输入框v-mode
 label | 仅在name值为drop-tree-input时有效，绑定选中的数据label | String | -
 loading | 仅在name值为drop-tree-input时有效，加载中动画 | Boolean | -
 treeData | 仅在name值为drop-tree-input时有效，树形列表，数据结构同tree组件 | Array | -
+
+## 4. 树形多选框
+
+#### 4.1 基础用法
+```vue
+<template>
+    <TreeInputs :data="tree" v-model="checkedValue"></TreeInputs>
+</template>
+<script>
+    export default {
+        data () {
+            return {
+                tree: [
+					{
+						title: 'parent 1-1',
+						value: '0',
+						children: [
+                            {
+                                title: 'parent 1-2',
+								value: '1',
+                                children: [
+                                    {
+                                        title: 'leaf 1-1-1',
+										value: '2'
+                                    },
+                                    {
+                                        title: 'leaf 1-1-2',
+										value: '3'
+                                    }
+                                ]
+                            }
+						]
+					}
+				],
+				checkedValue: '2'
+            }
+        }
+    }
+</script>
+```
+#### 4.2 API
+TreeInputs props
+属性 |说明 | 类型 | 默认值
+---|---|---|---|
+data | 搜索框的配置项，详细配置见下表 | Array | -
+position | 下拉菜单出现的位置，可选值为top、top-start、top-end、bottom、bottom-start、bottom-end、left、left-start、left-end、right、right-start、right-end | String | bottom-start
+inputWidth | 选择框宽度 | String | 300px
+inputHeight | 选择框高度 | String | 67px
+placeholder | 占位文本 | String | 请选择
+<br/>
+
+## 5. 自定义表头
+
+#### 5.1 基础用法
+```vue
+TreeInputs events
+事件名 |说明 | 返回值
+---|---|---|
+on-change | 选中项改变时触发 | 当前已选中的节点的value数组
+<template>
+	<TableConfig
+		@on-confirm="changeTableColumn"
+		v-model="selectFields"
+		:customList="totalFields">    
+	</TableConfig>
+</template>
+<script>
+    export default {
+        data () {
+            return {
+                selectFields: [],
+				totalFields: [],
+				customFields: []
+            }
+        },
+		methods: {
+			changeTableColumn () {
+				this.customFields = getCustomFields(this.totalFields, this.selectFields)
+			}
+		}
+    }
+</script>
+```			
