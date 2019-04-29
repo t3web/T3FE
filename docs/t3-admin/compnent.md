@@ -142,7 +142,7 @@ export default {
 #### 2.1 数据导出
 #### 概述 ##
 用来导出列表中的数据，支持勾选导出，全部数据导出，自定义导出文件的标题，文件类型等等
-#### 代码实例 ##
+#### 代码示例 
 
 ``` 
 <template>
@@ -177,10 +177,10 @@ excelTitle | 导出文件的标题 | String | Message
 exportModalTitle | 模态框的title | String | 信息导出
 exportType | 导出文件的类型 | String | xls
 
-#### 2.1 文件导入
+#### 2.2 文件导入
 #### 概述 ##
 支持导入文件、图片等
-#### 代码实例 
+#### 代码示例  
 
 ``` 
 <template>
@@ -218,3 +218,44 @@ isShowExcel | 是否需要上传Excel | Boolean | false
 isShowTemplate | 是否需要显示下载模板 | Boolean | false
 importName | 上传的Excel文件字段名 | String | file
 importZipName | 上传的图片压缩包文件字段名 | String | file
+
+#### 2.3 带模糊搜索的下拉框
+#### 概述 ##
+该组件支持多选、远程模糊搜索。勾选的值默认排在下拉列表的最前面
+#### 代码示例 
+
+``` 
+<template>
+ <multi-select
+          ref="vinSelect"
+          placeholder="车架号"
+          :width="200"
+          :height="100"
+          @on-success="getVinVal"
+          dataKey="vin"
+          dataLabel="vin">
+        </multi-select>
+</template>
+import multiSelect from  "_a/multi-select/multi-select.vue";
+<script>
+export default {
+    components:{
+      multiSelect
+}
+</script>
+```
+### API
+#### props
+
+
+属性 |说明 | 类型 | 默认值
+---|---|---|---|
+ placeholder| 默认提示文字 | String | 请选择
+ url | 远程接口的api | String(必填) | -
+ query | 输入的关键词 | String | -
+width | 组件的最大宽度 | number | 300
+height | 组件的最大高度 | number | 80
+params | 请求接口带上的参数 | Object | {}
+isLock | 请求锁，设为true以后可以在父组件控制达到某个条件以后再触发 | Boolean | false
+dataKey | 下拉列表的value | String | key
+dataLabel | 下拉列表的label | String | label
