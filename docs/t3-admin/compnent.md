@@ -336,4 +336,5 @@ dataLabel | 下拉列表的label | String | label
 事件名 |说明 | 返回值
 ---|---|---
  on-success| 接口返回的结果 | Array | []
- clearValue | 清楚接口返回的结果 | Array | []
+ clearValue | 重置结果 | Array | []
+
