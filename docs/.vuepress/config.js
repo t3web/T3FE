@@ -16,10 +16,12 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: "首页", link: "/" },
-      { text: "T3管理后台", link: "/t3-admin/" }
+      { text: "T3管理后台", link: "/t3-admin/" },
+      { text: "组件", link: "/t3-components/" },
     ],
     sidebar: {
-      '/t3-admin/': genSidebarConfigCondots('T3后台管理系统')
+      '/t3-admin/': genSidebarConfigCondots('T3后台管理系统'),
+      '/t3-components/': getComponents('组件')
     }
   },
 
@@ -43,10 +45,32 @@ function genSidebarConfigCondots (title) {
         'routerconfig',
         'authconfig',
         'globaldirect',
-        'compnent',
+        // 'compnent',
         'apirequest',
         'mock'
       ]
     }
   ]
+}
+function getComponents(title) {
+    return [
+       {
+        title,
+        collapsable: false,
+        children: [
+            '',
+            'echarts',
+            'infoCard',
+            'commonIcon',
+            'countTo',
+            'inputTree',
+            'exportFile',
+            'importFile',
+            'searchList',
+            'multiSelect',
+            'treeInputs',
+            'tableConfig'
+        ]
+       }
+    ]
 }
