@@ -69,7 +69,7 @@ function getComponents(title) {
             'searchList',
             'multiSelect',
             'treeInputs',
-            'tableConfig'
+            'tableColumns'
         ]
        }
     ]
