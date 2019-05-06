@@ -1,7 +1,7 @@
 # 文件导入
 支持导入文件、图片等
 #### 代码示例  
-``` 
+```js
 <template>
 <ImportFile
   toDownTemplateUrl="/api/assets/v1/vehicle/createVehicleExcelModel"

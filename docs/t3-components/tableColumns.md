@@ -1,7 +1,7 @@
 # 自定义表头
 
 ### 基础用法
-```vue
+```js
 <template>
 	<TableColumns v-model="selectFields" :customList="totalFields"></TableColumns>
 </template>

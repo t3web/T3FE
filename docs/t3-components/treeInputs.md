@@ -1,6 +1,6 @@
 # 树形多选框
 #### 基础用法
-```vue
+```js
 <template>
     <TreeInputs :data="tree" v-model="checkedValue"></TreeInputs>
 </template>

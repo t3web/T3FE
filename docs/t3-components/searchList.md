@@ -1,7 +1,7 @@
 #  搜索框
 
 ### 基础用法
-```vue
+```js
 <template>
     <SearchList :inputList="inputList"></SearchList>
 </template>
